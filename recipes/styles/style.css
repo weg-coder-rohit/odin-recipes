@@ -1,5 +1,7 @@
 .pageheading {
     text-align: center;
+    background-color: aquamarine;
+    padding: 10px;
 }
 
 body {
@@ -13,7 +15,9 @@ body {
 }
 
 .image {
+    margin:  0px auto;
     margin-left: 200px;
+    border: 2px solid red;
 }
 
 .recipe-list {
