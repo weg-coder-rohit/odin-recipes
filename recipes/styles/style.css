@@ -1,7 +1,5 @@
 .pageheading {
     text-align: center;
-    background-color: red;
-    color: white;
 }
 
 body {
@@ -16,4 +14,23 @@ body {
 
 .image {
     margin-left: 200px;
+}
+
+.recipe-list {
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 12px;
+}
+
+.recipe-list:hover {
+    background-color: lightblue;
+    color: white;
+}
+
+.logo {
+    border: solid;
+}
+.logo img {
+    margin-left: 260px; 
+    width: 200px;
 }
