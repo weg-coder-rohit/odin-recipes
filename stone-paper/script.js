@@ -7,27 +7,51 @@ let computerSelection = getComputerChoice();
 let cflag = 0;
 let pflag = 0;
 let rounds = 5;
-while (rounds >= 1) {
-    function playRound(computerSelection) {
-        let playerSelection = prompt("write one, Rock or Paper or Scissor");
-        csel = computerSelection.toLowerCase();
-        psel = playerSelection.toLowerCase();
-        if ((csel === "rock" && psel === "Paper") && (csel === "Paper" && psel === "scissor") && (csel === "scissor" && psel === "rock")){
-            pflag += 1;
-            rounds -= 1;
-            console.log(`Player Wins! ${psel} beats ${csel}`);
-        }
-        else if ((csel === "rock" && psel === "scissor") && (csel === "paper" && psel === "rock") && (csel === "scissor" && psel === "paper")) {
-            console.log(`Computer Wins! ${csel} beats ${psel}`);
-            cflag += 1;
-            rounds -= 1;
-        }
-        else {
-            console.log(`Draw ${csel} and ${psel}`);
-            rounds -= 1;
-        }
-    
+
+function playRound(computerSelection, playerSelection) {
+    var playerSelection = prompt("write one, Rock or Paper or Scissor");
+    csel = computerSelection.toLowerCase();
+    psel = playerSelection.toLowerCase();
+    if (csel === "rock" && psel === "paper"){
+        pflag += 1;
+        console.log(`Player Wins! ${psel} beats ${csel}`);
+    }
+    else if (csel === "paper" && psel === "scissor") {
+        pflag += 1;
+        console.log(`Player Wins! ${psel} beats ${csel}`);
+    }
+
+    else if (csel === "scissor" && psel === "rock") {
+        pflag += 1;
+        console.log(`Player Wins! ${psel} beats ${csel}`);
+    }
+
+    else if (csel === "rock" && psel === "scissor")  {
+        console.log(`Computer Wins! ${csel} beats ${psel}`);
+        cflag += 1;
+        
+    }
+    else if (csel === "paper" && psel === "rock") {
+        cflag += 1;
+        console.log(`Computer Wins! ${csel} beats ${psel}`);
+    }
+
+    else if (csel === "scissor" && psel === "paper") {
+        cflag += 1;
+        console.log(`Computer Wins! ${csel} beats ${psel}`);
+    }
+    else {
+        console.log(`Draw ${csel} and ${psel}`);
+        
+    }
+    console.log(`Computer score: ${cflag}, Player Score: ${pflag}`);
+}
+
+
+function playGame(computerSelection) {
+    for (i = 0; i < rounds; i++) {
+        playRound(computerSelection);
     }
 }
 
-playRound(computerSelection);
+playGame(computerSelection);
